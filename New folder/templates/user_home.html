@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title>user home</title>
+	</head>
+	<body>
+        
+		<h1>hi {{datas}}</h1>
+
+        <!-- <a href="{{url_for('add_expense_page',data = datas)}}">add expense</a> -->
+        <button type="button" onclick="window.location.href='{{ url_for('add_expense_page', data = datas)}}';">Add Expense</button>
+        <!-- <a href="{{url_for('home')}}">Sign Out</a> -->
+        <button type="button" onclick="window.location.href='{{ url_for('home')}}';">Sign out</button>
+
+        
+        <table>
+			<tr>
+				<th>date</th>
+				<th>expense</th>
+				<th>amount</th>
+			</tr>
+            {% for data in values %}
+              	<tr>
+					<td>{{data[3]}}</td>
+					<td>{{data[0]}}</td>
+					<td>{{data[2]}}</td>
+				</tr>
+			{% endfor %}
+        </table>
+        <h2>total amount {{total}}</h2>
+
+        <a href="{{url_for('family_expense',data = datas)}}">Family expense</a>
+	</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Family Expense</title>
+    <a href="{{url_for('user_home',datas = datas)}}">User Home</a>
+</head>
+<body>
+    <h1>Family Expense</h1>
+    <h3>Hi {{datas}} </h3>
+    {% for datas in family_user_amount %}
+        <h4>{{datas[0]}} spend {{datas[1]}}</h4>
+        {% endfor %}
+    <h3>
+        Total spend expense of {{family_name}} family is {{total_value}}
+    </h3>
+</body>
+</html>
